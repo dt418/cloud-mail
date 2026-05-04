@@ -145,7 +145,7 @@
     <el-dialog class="dialog" v-model="setTypeShow" :title="$t('changePerm')" @closed="resetUserForm">
       <div class="dialog-box">
         <el-input disabled :model-value="$t('admin')" v-if="userForm.type === 0"/>
-        <el-select v-else v-model="userForm.type" :placeholder="$t('select')"
+        <el-select v-else v-model="userForm.type" :placeholder="$t('select')">
           <el-option v-for="item in roleList" :label="item.name" :value="item.roleId" :key="item.roleId"/>
         </el-select>
         <el-button :disabled="userForm.type === 0" class="btn" :loading="settingLoading" type="primary" @click="setType"
